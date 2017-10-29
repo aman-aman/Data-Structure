@@ -1,2 +1,2 @@
 # Data-Structure
-Implementation of various data structure using STL library
+Implementation of various data structure using C++.
