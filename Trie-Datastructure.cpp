@@ -8,7 +8,7 @@ using namespace std;
 struct trienode
 {
     struct trienode *child[26];
-    bool endis;
+    bool isend;
 };
 
 //Creating node of the tree
@@ -17,7 +17,7 @@ struct trienode* getnode()
     trienode *p=new trienode();
     for(int i=0;i<26;i++)
         p->child[i]=NULL;
-    p->endis=false;
+    p->isend=false;
     return p;
 }
 
@@ -32,7 +32,7 @@ void insert(struct trienode *root,string key)
             p->child[index]=getnode();
         p=p->child[index];
     }
-    p->endis=true;
+    p->isend=true;
 }
 
 //Searching the string in the tree
@@ -46,7 +46,7 @@ bool search(struct trienode *root,string key)
             return false;
         p=p->child[index];
     }
-    return (p!=NULL&&p->endis);
+    return (p!=NULL&&p->isend);
 }
 
 int main()
